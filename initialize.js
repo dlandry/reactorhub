@@ -36,14 +36,14 @@ if (url.searchParams.get("Control") !== null) {
   var commandPairs = controlList.split(";");
   var j;
   for (j=0;j<commandPairs.length;j++) {
-    console.log("command pairs are: " + commandPairs[j]);
+//    console.log("command pairs are: " + commandPairs[j]);
     // Split again on the , and add to sessionStorage
     var commandPair = commandPairs[j].split(",")
-    console.log("the pair is: " + commandPair[0] + " : " + commandPair[1]);
+//    console.log("the pair is: " + commandPair[0] + " : " + commandPair[1]);
     var Chms = commandPair[0];
     var Ca = Chms.split(':');
     var Cseconds = (+Ca[0]) * 60 * 60 + (+Ca[1]) * 60 + (+Ca[2]);
-    console.log("***** Cseconds is: " + Cseconds + " The commandPair for this is: " + commandPair[1]);
+//    console.log("***** Cseconds is: " + Cseconds + " The commandPair for this is: " + commandPair[1]);
     sessionStorage.setItem(Cseconds,commandPair[1]);
   }
   var k = 0;
@@ -67,6 +67,7 @@ if (url.searchParams.get("YTtalentVOL") !== null) {
 // DailyMotion talent video
 //console.log("DMtalentVOL is: " + url.searchParams.get("DMtalentVOL"));
 var DMtalentVOL = 50;
+console.log("init: DM Volume");
 if (url.searchParams.get("DMtalentVOL") !== null) {
   console.log("init: DM talent VOL is: " + DMtalentVOL);
   DMtalentVOL = parseFloat(DMtalentVOL)/100;
@@ -107,7 +108,7 @@ function getVideoIdFromDMURL(url) {
   }
   if (url.searchParams.get("DMtalent") !== null){
     var DMtalentVideoURL = url.searchParams.get("DMtalent");
-    console.log("DM Video URL is: " + DMtalentVideoURL);
+//    console.log("DM Video URL is: " + DMtalentVideoURL);
     localStorage.provider = "DM";
   }
   if (reactorVideoURL){
@@ -118,19 +119,19 @@ function getVideoIdFromDMURL(url) {
   }
   if (DMtalentVideoURL ){
     var DMtalentVideoID = getVideoIdFromDMURL(DMtalentVideoURL);
-    console.log("DM Video ID is: " + DMtalentVideoID);
+//    console.log("DM Video ID is: " + DMtalentVideoID);
   }
 
   // These are the two vars we need to use as the videoId for YT.Player objects
   var reactorVideoIDString = new String(reactorVideoID);
   var YTtalentVideoIDString = new String(YTtalentVideoID);
   var DMtalentVideoIDString = new String(DMtalentVideoID);
-  console.log("DM Video ID Streing is: " +DMtalentVideoIDString)
+//  console.log("DM Video ID Streing is: " +DMtalentVideoIDString)
   // Save to local Storage
   localStorage.setItem("reactorVideoID", reactorVideoIDString );
   localStorage.setItem("YTtalentVideoID", YTtalentVideoIDString );
   localStorage.setItem("DMtalentVideoID", DMtalentVideoIDString );
-  console.log("local Storage DM Video ID Strring is: " + localStorage.getItem("DMtalentVideoID"));
+//  console.log("local Storage DM Video ID Strring is: " + localStorage.getItem("DMtalentVideoID"));
   //console.log("Index: YTtalentVideoURL: " + YTtalentVideoIDString);
   //console.log("Index: DMtalentVideoID: " + DMtalentVideoIDString);
   //console.log("Index: reactorVideoID: " + reactorVideoIDString);
@@ -142,6 +143,6 @@ function getVideoIdFromDMURL(url) {
   }
 //  console.log("=======================================================");
   for (i = 1; i <= sessionStorage.length; i++) {
-    console.log("Session storage #" + i + "is: " + sessionStorage.key(i));
+//    console.log("Session storage #" + i + "is: " + sessionStorage.key(i));
   }
   // console.log("talentVideoURL: " + talentVideoURL);
