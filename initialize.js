@@ -69,8 +69,9 @@ if (url.searchParams.get("YTtalentVOL") !== null) {
 var DMtalentVOL = 50;
 if (url.searchParams.get("DMtalentVOL") !== null) {
   console.log("init: DM talent VOL is: " + DMtalentVOL);
-  DMtalentVOL = parseFloat(DMtalentVOL);
+  DMtalentVOL = parseFloat(DMtalentVOL)/100;
   console.log("init: Now DM talent VOL is: " + DMtalentVOL);
+
   DMtalentVOL = url.searchParams.get("DMtalentVOL");
   localStorage.setItem("DMtalentVOL", DMtalentVOL );
 }
