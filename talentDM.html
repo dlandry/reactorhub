@@ -19,15 +19,15 @@
   //Handle video ending (seek back to zero time)//
   player.addEventListener('end', function (evt) { evt.target.currentTime = 0; evt.target.stop() } );
   player.addEventListener('apiready', function(event) {
-    console.log('++++++++++++ event '+event.type+' received on '+event.target+'!');
-    console.log("Volume setting is: " + localStorage.getItem("DMtalentVOL"));
+    console.log('talentDM: event '+event.type+' received on '+event.target+'!');
+    console.log("talentDM: Volume setting is: " + localStorage.getItem("DMtalentVOL"));
     player.setVolume(parseFloat(localStorage.getItem("DMtalentVOL")));
 });
 
-  console.log("setting DM Volume to: " + localStorage.getItem("DMtalentVOL"))
+  console.log("talentDM: setting DM Volume to: " + localStorage.getItem("DMtalentVOL"))
   // //Control functions for DM Player instance//
   function runcommand(command) {
-    console.log(" running command: " + command);
+    console.log("talentDM: running command: " + command);
     switch(command) {
       case "play":
         player.play();
@@ -39,7 +39,7 @@
         player.stop();
         break;
       default:
-        console.log("not recognized command")
+        console.log("talentDM: not recognized command")
       }
   }
   function func_Play()

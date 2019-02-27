@@ -48,7 +48,7 @@ if (url.searchParams.get("Control") !== null) {
   }
   var k = 0;
   for (k=0;k<sessionStorage.length;k++) {
-    console.log("@@@@@@@@@@@@@@ session storage item " + k + " is: " + sessionStorage.getItem(sessionStorage.key(k)));
+//    console.log("@@@@@@@@@@@@@@ session storage item " + k + " is: " + sessionStorage.getItem(sessionStorage.key(k)));
   }
 
 // default volume
@@ -69,11 +69,12 @@ if (url.searchParams.get("YTtalentVOL") !== null) {
 var DMtalentVOL = 50;
 console.log("init: DM Volume");
 if (url.searchParams.get("DMtalentVOL") !== null) {
+  DMtalentVOL = url.searchParams.get("DMtalentVOL");
   console.log("init: DM talent VOL is: " + DMtalentVOL);
   DMtalentVOL = parseFloat(DMtalentVOL)/100;
   console.log("init: Now DM talent VOL is: " + DMtalentVOL);
 
-  DMtalentVOL = url.searchParams.get("DMtalentVOL");
+
   localStorage.setItem("DMtalentVOL", DMtalentVOL );
 }
 
