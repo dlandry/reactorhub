@@ -19,7 +19,7 @@
   //Handle video ending (seek back to zero time)//
   player.addEventListener('end', function (evt) { evt.target.currentTime = 0; evt.target.stop() } );
   player.addEventListener('apiready', function(event) {
-    console.log('event '+event.type+' received on '+event.target+'!');
+    console.log('++++++++++++ event '+event.type+' received on '+event.target+'!');
     player.setVolume(localStorage.getItem("DMtalentVOL"));
 });
 
