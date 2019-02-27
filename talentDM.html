@@ -12,13 +12,17 @@
 //    height: '100%',
     params: {
       autoplay: true,
+      queue-autoplay-next: false,
       mute: true
     }
   });
   //Handle video ending (seek back to zero time)//
   player.addEventListener('end', function (evt) { evt.target.currentTime = 0; evt.target.stop() } );
+  player.addEventListener('apiready', function(event) {
+    console.log('event '+event.type+' received on '+event.target+'!');
+    player.setVolume(localStorage.getItem("DMtalentVOL"));
+});
 
-  player.setVolume(localStorage.getItem("DMtalentVOL"));
   console.log("setting DM Volume to: " + localStorage.getItem("DMtalentVOL"))
   // //Control functions for DM Player instance//
   function runcommand(command) {
