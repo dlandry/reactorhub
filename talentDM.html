@@ -20,7 +20,7 @@
   player.addEventListener('end', function (evt) { evt.target.currentTime = 0; evt.target.stop() } );
   player.addEventListener('apiready', function(event) {
     console.log('++++++++++++ event '+event.type+' received on '+event.target+'!');
-    console.log("Volume setting is: " + parseFloat(localStorage.getItem("DMtalentVOL")));
+    console.log("Volume setting is: " + localStorage.getItem("DMtalentVOL"));
     player.setVolume(parseFloat(localStorage.getItem("DMtalentVOL")));
 });
 
