@@ -84,6 +84,15 @@ function getVideoIdFromURL(url) {
 //  console.log("Function url pathname is: " + result);
   return result;
 }
+function getVideoIdFromDMURL(url) {
+//  console.log("Function url is: " + url);
+  delimiter = '/',
+  start = 4,
+  tokens = url.split(delimiter).slice(start),
+  result = tokens.join(delimiter); // those.that
+//  console.log("Function url pathname is: " + result);
+  return result;
+}
   if (url.searchParams.get("reactor") !== null){
     var reactorVideoURL = url.searchParams.get("reactor");
   }
@@ -101,7 +110,7 @@ function getVideoIdFromURL(url) {
     var YTtalentVideoID = getVideoIdFromURL(YTtalentVideoURL);
   }
   if (DMtalentVideoURL ){
-    var DMtalentVideoID = getVideoIdFromURL(DMtalentVideoURL);
+    var DMtalentVideoID = getVideoIdFromDMURL(DMtalentVideoURL);
     console.log("DM Video ID is: " + DMtalentVideoID);
   }
 
