@@ -2,18 +2,18 @@
 
   <head>
     <meta charset="utf-8"/>
-      Reactor Hub - Beta 1  (3)<br><br>
+      Reactor Hub - Beta 1  (4)<br><br>
     </body>
     <script language="javascript" type="text/javascript" src="initialize.js">
     </script>
     <script>
-      document.getElementsByName("fname").src="talentDM.html";
+      top.document.getElementById('AppFrame').setAttribute("src","talentDM.html");
     </script>
 <!--    <div id="reactor"></div>
     <div id="talent"></div> -->
     <iframe src="reactor.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
 <!--    <iframe src="talent.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe> -->
-    <iframe src="" name="talent" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
+    <iframe src="" id="talent" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
 <!--    <iframe width=”560" height=”315" src=”reactor.js?enablejsapi=1&version=3&origin=http://reactorhub.github.io" frameborder=”0" allowfullscreen id=”talent" enablejsapi=”1" class=”yt-video”></iframe> -->
 <!--    <script language="javascript" type="text/javascript" src="reactor.js"> </script> -->
   </head>
