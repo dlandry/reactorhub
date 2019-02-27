@@ -92,6 +92,7 @@ function getVideoIdFromURL(url) {
   }
   if (url.searchParams.get("DMtalent") !== null){
     var DMtalentVideoURL = url.searchParams.get("DMtalent");
+    console.log("DM Video URL is: " + DMtalentVideoURL);
   }
   if (reactorVideoURL){
     var reactorVideoID = getVideoIdFromURL(reactorVideoURL);
@@ -101,16 +102,19 @@ function getVideoIdFromURL(url) {
   }
   if (DMtalentVideoURL ){
     var DMtalentVideoID = getVideoIdFromURL(DMtalentVideoURL);
+    console.log("DM Video ID is: " + DMtalentVideoID);
   }
 
   // These are the two vars we need to use as the videoId for YT.Player objects
   var reactorVideoIDString = new String(reactorVideoID);
   var YTtalentVideoIDString = new String(YTtalentVideoID);
   var DMtalentVideoIDString = new String(DMtalentVideoID);
+  console.log("DM Video ID Streing is: " +DMtalentVideoIDString)
   // Save to local Storage
   localStorage.setItem("reactorVideoID", reactorVideoIDString );
   localStorage.setItem("YTtalentVideoID", YTtalentVideoIDString );
   localStorage.setItem("DMtalentVideoID", DMtalentVideoIDString );
+  console.log("local Storage DM Video ID Strring is: " + localStorage.getItem("DMtalentVideoID"));
   //console.log("Index: YTtalentVideoURL: " + YTtalentVideoIDString);
   //console.log("Index: DMtalentVideoID: " + DMtalentVideoIDString);
   //console.log("Index: reactorVideoID: " + reactorVideoIDString);
