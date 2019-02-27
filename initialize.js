@@ -104,7 +104,7 @@ function getVideoIdFromDMURL(url) {
   if (url.searchParams.get("DMtalent") !== null){
     var DMtalentVideoURL = url.searchParams.get("DMtalent");
     console.log("DM Video URL is: " + DMtalentVideoURL);
-    localStorage.provide = "DM";
+    localStorage.provider = "DM";
   }
   if (reactorVideoURL){
     var reactorVideoID = getVideoIdFromURL(reactorVideoURL);
