@@ -18,12 +18,46 @@
       mute: false
     }
   });
+
+  var cueList=[[]];
+  var sortedCue=[[]];
+  var count= 0;
+  for (count = 0; count < sessionStorage.length; count++) {
+    cueList[count] = sessionStorage.key(count);
+    console.log("CueList " + count +" is: " + cueList[count]);
+  }
+  sortedCue = cueList.sort(function(a, b){return a - b});
+
+
+  function cueListener(key) {
+    // console.log("*************  current reactor time is: " + localStorage.reactortimer);
+
+    for (count = 0; count < sortedCue.length; count++) {
+      // console.log("========================================");
+      // console.log("SortedCue " + count + " is: " + sortedCue[count]);
+      //
+      // console.log("current reactor time is: " + localStorage.reactortimer);
+      var commandtime = sortedCue[count]- localStorage.reactortimer;
+      if(commandtime <= 0.2 && !(commandtime < 0)) {
+        var command = sessionStorage.getItem(sortedCue[count]);
+        console.log("commandtime is: " + commandtime);
+        console.log("reactor time is: " + localStorage.reactortimer);
+        console.log("cue time is: " + sessionStorage.getItem(commandtime));
+        runcommand(command);
+      }
+      //console.log("cue time minus current time = " + total);
+      // console.log("------------------------------------------")
+
+    }
+  }
+
   //Handle video ending (seek back to zero time)//
   player.addEventListener('end', function (evt) { evt.target.currentTime = 0; evt.target.stop() } );
   player.addEventListener('apiready', function(event) {
     console.log('talentDM: event '+event.type+' received on '+event.target+'!');
     console.log("talentDM: Volume setting is: " + localStorage.getItem("DMtalentVOL"));
     player.setVolume(parseFloat(localStorage.getItem("DMtalentVOL")));
+    timeupdater = setInterval(cueListener, 100);
 });
 
   console.log("talentDM: setting DM Volume to: " + localStorage.getItem("DMtalentVOL"))
