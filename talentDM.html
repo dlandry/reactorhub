@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <body>
-    test 4 <br><br>
+<!--    test 4 <br><br> -->
 <script src='https://api.dmcdn.net/all.js'></script>
 <div id='player'></div>
 <script>
@@ -24,7 +24,7 @@
   var count= 0;
   for (count = 0; count < sessionStorage.length; count++) {
     cueList[count] = sessionStorage.key(count);
-    console.log("CueList " + count +" is: " + cueList[count]);
+//    console.log("CueList " + count +" is: " + cueList[count]);
   }
   sortedCue = cueList.sort(function(a, b){return a - b});
 
@@ -40,9 +40,9 @@
       var commandtime = sortedCue[count]- localStorage.reactortimer;
       if(commandtime <= 0.2 && !(commandtime < 0)) {
         var command = sessionStorage.getItem(sortedCue[count]);
-        console.log("commandtime is: " + commandtime);
-        console.log("reactor time is: " + localStorage.reactortimer);
-        console.log("cue time is: " + sessionStorage.getItem(commandtime));
+        // console.log("commandtime is: " + commandtime);
+        // console.log("reactor time is: " + localStorage.reactortimer);
+        // console.log("cue time is: " + sessionStorage.getItem(commandtime));
         runcommand(command);
       }
       //console.log("cue time minus current time = " + total);
@@ -54,16 +54,16 @@
   //Handle video ending (seek back to zero time)//
   player.addEventListener('end', function (evt) { evt.target.currentTime = 0; evt.target.stop() } );
   player.addEventListener('apiready', function(event) {
-    console.log('talentDM: event '+event.type+' received on '+event.target+'!');
-    console.log("talentDM: Volume setting is: " + localStorage.getItem("DMtalentVOL"));
+    // console.log('talentDM: event '+event.type+' received on '+event.target+'!');
+    // console.log("talentDM: Volume setting is: " + localStorage.getItem("DMtalentVOL"));
     player.setVolume(parseFloat(localStorage.getItem("DMtalentVOL")));
     timeupdater = setInterval(cueListener, 100);
 });
 
-  console.log("talentDM: setting DM Volume to: " + localStorage.getItem("DMtalentVOL"))
+  // console.log("talentDM: setting DM Volume to: " + localStorage.getItem("DMtalentVOL"))
   // //Control functions for DM Player instance//
   function runcommand(command) {
-    console.log("talentDM: running command: " + command);
+    // console.log("talentDM: running command: " + command);
     switch(command) {
       case "play":
         player.play();
@@ -75,7 +75,7 @@
         player.stop();
         break;
       default:
-        console.log("talentDM: not recognized command")
+        // console.log("talentDM: not recognized command")
       }
   }
   function func_Play()

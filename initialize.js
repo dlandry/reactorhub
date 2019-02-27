@@ -67,12 +67,12 @@ if (url.searchParams.get("YTtalentVOL") !== null) {
 // DailyMotion talent video
 //console.log("DMtalentVOL is: " + url.searchParams.get("DMtalentVOL"));
 var DMtalentVOL = 50;
-console.log("init: DM Volume");
+// console.log("init: DM Volume");
 if (url.searchParams.get("DMtalentVOL") !== null) {
   DMtalentVOL = url.searchParams.get("DMtalentVOL");
-  console.log("init: DM talent VOL is: " + DMtalentVOL);
+  // console.log("init: DM talent VOL is: " + DMtalentVOL);
   DMtalentVOL = parseFloat(DMtalentVOL)/100;
-  console.log("init: Now DM talent VOL is: " + DMtalentVOL);
+  // console.log("init: Now DM talent VOL is: " + DMtalentVOL);
 
 
   localStorage.setItem("DMtalentVOL", DMtalentVOL );
