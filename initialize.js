@@ -68,8 +68,11 @@ if (url.searchParams.get("YTtalentVOL") !== null) {
 //console.log("DMtalentVOL is: " + url.searchParams.get("DMtalentVOL"));
 var DMtalentVOL = 50;
 if (url.searchParams.get("DMtalentVOL") !== null) {
+  console.log("init: DM talent VOL is: " + DMtalentVOL);
+  DMtalentVOL = parseFloat(DMtalentVOL);
+  console.log("init: Now DM talent VOL is: " + DMtalentVOL);
   DMtalentVOL = url.searchParams.get("DMtalentVOL");
-  localStorage.setItem("DMtalentVOL", DMtalentVOL/100 );
+  localStorage.setItem("DMtalentVOL", DMtalentVOL );
 }
 
 //console.log("starting reactor volume is: " + reactorVOL);
