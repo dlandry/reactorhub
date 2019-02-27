@@ -16,7 +16,7 @@
     }
   });
   //Handle video ending (seek back to zero time)//
-//  player.addEventListener('end', function (evt) { evt.target.currentTime = 0; evt.target.play() } );
+  player.addEventListener('end', function (evt) { evt.target.currentTime = 0; evt.target.stop() } );
 
   player.setVolume(localStorage.getItem("DMtalentVOL"));
   console.log("setting DM Volume to: " + localStorage.getItem("DMtalentVOL"))
