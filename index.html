@@ -2,7 +2,7 @@
 
   <head>
     <meta charset="utf-8"/>
-      Reactor Hub - Beta 1  (5)<br><br>
+      Reactor Hub - Beta 1  (0)<br><br>
     </body>
     <script language="javascript" type="text/javascript" src="initialize.js">
     </script>
@@ -16,7 +16,8 @@
 <!--    <script language="javascript" type="text/javascript" src="reactor.js"> </script> -->
     <script>
 //      document.getElementById('talent').setAttribute("src","talentDM.html");
-      if (localStorage.getItem("YTtalentVideoID")) {
+      console.log("provider is: " + localStorage.provider);
+      if (localStorage.provider = "YT") {
         document.getElementById('talent').src='talent.html';
       } else {
         document.getElementById('talent').src='talentDM.html';
