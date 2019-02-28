@@ -43,6 +43,7 @@ Let's break this link down to explain the components:
   - Some videos have 'embedding disabled, this may not work with this tool (haven't run into any yet, but I suspect this might cause an issue.
   - If you find either video is muted, check the video controls (mouse over the video to bring up the normal video controls) and see if it got muted somehow, and unmute manually.
   - Right now there is no controlover the video placement, it should show the videos either side by side, or one above the other. Eventually I will be creating some selectable css styles that should be able to present the videos in a layout very similar to how reactors commonly lay our their videos (picture in picture style.)
+  - in some cases content owners block unknown referrers (your web browser is suppose to send some infomration as to what 'domain'you are making the request, some security/ad blocking software blocks this information, and instead of getting a video you will see a warning that the owner has blocked you ... try using a different browser or disable ad blocking or 'tracking blockers' temporarily.
   
 **Benefits** : Other than limiting the liklihood of the reactor being hit with copyright strikes for 'borrowing' a work of art and putting it their own video, other benefits are:
   - works with browsers in mobile devices.
