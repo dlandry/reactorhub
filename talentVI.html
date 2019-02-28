@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>Example</title>
+</head>
+<body>
+
+<div id="myVideo"></div>
+
+<script src="{url}"></script>
+<script>
+  var options = {
+    url: "https://vimeo.com/313578837",
+    width: 800
+  };
+
+  var videoPlayer = new Vimeo.Player('myVideo', options);
+
+  videoPlayer.on('play', function() {
+    console.log('Played the video');
+  });
+</script>
+
+</body>
+</html>
