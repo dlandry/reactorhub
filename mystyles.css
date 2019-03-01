@@ -2,7 +2,7 @@
   width: 100%;
 }
 .div_element {
-  height: 100px;
+  height: 100%;
   width: 100%;
 }
 #div_1 {
@@ -18,7 +18,7 @@
     width: 38%;
   }
   #div_2 {
-    width: 62%;
+    width: 100%;
   }
   .div_element {
     float: left;
