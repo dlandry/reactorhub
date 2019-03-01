@@ -23,8 +23,8 @@
 //        console.log("FUNCTION: Reactor Frame Start time is: " + localStorage.getItem("reactorStart") + "Int: " + parseInt(localStorage.getItem("reactorStart")));
         var startTime = parseInt(localStorage.getItem("reactorStart"));
         player = new YT.Player('reactor', {
-//          height: '768',
-//          width: '1360',
+//          height: '100%',
+          width: '100%',
           playerVars: { 'enablejsapi' : 1, 'autoplay': 0, 'controls': 1,'rel': 0, 'autohide':1,'wmode':'opaque','origin':'https://reactorhub.github.io','start':startTime },
           videoId: localStorage.getItem("reactorVideoID"),
           //start: 180,
