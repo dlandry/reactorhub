@@ -2,8 +2,10 @@
 <html>
   <body>
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-    <div id="reactor"></div>
+    <div style="display:block;position:absolute;top:0px;z-index:998;bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden;">
 
+    <div id="reactor"></div>
+  </div>
     <script>
 
 
@@ -41,10 +43,10 @@
           event.target.playVideo();
           // console.log("reactor ready: " + localStorage.getItem("reactorVideoID"));
           player.setVolume(localStorage.getItem("reactorVOL"));
-          var requestFullScreen = iframe.requestFullScreen || iframe.mozRequestFullScreen || iframe.webkitRequestFullScreen;
-            if (requestFullScreen) {
-              requestFullScreen.bind(iframe)();
-            }
+          // var requestFullScreen = iframe.requestFullScreen || iframe.mozRequestFullScreen || iframe.webkitRequestFullScreen;
+          //   if (requestFullScreen) {
+          //     requestFullScreen.bind(iframe)();
+          //   }
           // console.log("Reactor Frame Start time is: " +localStorage.getItem("reactorStart"));
 //        }, 189000)
         if (typeof(Storage) !== "undefined") {
