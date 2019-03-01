@@ -36,6 +36,17 @@
           }
         });
       }
+      function launchIntoFullscreen(element) {
+        if(element.requestFullscreen) {
+          element.requestFullscreen();
+        } else if(element.mozRequestFullScreen) {
+          element.mozRequestFullScreen();
+        } else if(element.webkitRequestFullscreen) {
+          element.webkitRequestFullscreen();
+        } else if(element.msRequestFullscreen) {
+          element.msRequestFullscreen();
+        }
+      }
 //    setTimeout(function(){
       // 4. The API will call this function when the video player is ready.
       function onPlayerReady(event) {
@@ -96,6 +107,9 @@
       //    the player should play for six seconds and then stop.
       var done = false;
       function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING) {
+          launchIntoFullscreen("reactor");
+        }
 //        if (event.data == YT.PlayerState.PLAYING && !done) {
 //          setTimeout(stopVideo, 6000);
 //          done = true;
