@@ -10,7 +10,7 @@
   background: #adadad;
 }
 #div_2 {
-  width: 62%;
+  width: 100%;
   background: #F00;
 }
 @media(max-width: 568px) {
