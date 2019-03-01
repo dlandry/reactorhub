@@ -41,6 +41,10 @@
           event.target.playVideo();
           // console.log("reactor ready: " + localStorage.getItem("reactorVideoID"));
           player.setVolume(localStorage.getItem("reactorVOL"));
+          var requestFullScreen = iframe.requestFullScreen || iframe.mozRequestFullScreen || iframe.webkitRequestFullScreen;
+            if (requestFullScreen) {
+              requestFullScreen.bind(iframe)();
+            }
           // console.log("Reactor Frame Start time is: " +localStorage.getItem("reactorStart"));
 //        }, 189000)
         if (typeof(Storage) !== "undefined") {
