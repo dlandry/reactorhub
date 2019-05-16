@@ -1,7 +1,7 @@
 # reactorhub.github.io
 Youtube Reactor web page :
 
-Purpose: A javascript webpage that allows youtube reactors to react to videos without (significantly less?) fear of copyright strikes.
+Purpose: A javascript webpage that allows youtube reactors to react to videos without (significantly less?) fear of a copyright strikes.
 
 Definitions:
   reactor: the person creating a video reacting to a target videos
